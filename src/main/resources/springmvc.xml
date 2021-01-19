@@ -2,7 +2,6 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -18,7 +17,19 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!-- 开启Spring MVC注解支持 -->
-    <mvc:annotation-driven/>
+    <!-- 自定义的类型转换器 -->
+    <bean id="conversionServiceFactoryBean" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="cn.itcast.utils.String2DateConverter"/>
+            </set>
+        </property>
+    </bean>
 
+
+    <!-- 开启Spring MVC注解支持 （会自动配置处理器映射器HandlerMapping、处理器适配器HandlerAdapter）-->
+<!--    <mvc:annotation-driven/>-->
+
+    <!-- 开启Spring MVC注解支持，并且加入自定义的类型转换器 -->
+    <mvc:annotation-driven conversion-service="conversionServiceFactoryBean"/>
 </beans>

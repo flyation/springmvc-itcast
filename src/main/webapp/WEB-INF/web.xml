@@ -5,6 +5,25 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
+
+  <!-- 字符集过滤器：解决中文乱码问题
+          Tomcat8以后默认编码已经是UTF-8了（以前是ISO-8859-1），get请求无需额外处理，而post仍需处理
+   -->
+  <filter>
+    <filter-name>characterEncodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>characterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+
   <!-- 前端控制器 -->
   <servlet>
     <servlet-name>dispatcherServlet</servlet-name>
