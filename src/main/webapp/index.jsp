@@ -41,5 +41,9 @@
     <hr>
     <a href="/user/test5">test55</a>
 
+    <hr>
+    <a href="/user1/mav">modelAndView</a>
+    <a href="/user1/forward">forward</a>
+    <a href="/user1/redirect">redirect</a>
 </body>
 </html>

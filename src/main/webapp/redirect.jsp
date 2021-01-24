@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-    <h3>入门成功</h3>
+    <h3>来自重定向</h3>
     ${user.uname} -- ${user.uage}
 </body>
 </html>

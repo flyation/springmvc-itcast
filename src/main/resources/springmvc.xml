@@ -32,4 +32,7 @@
 
     <!-- 开启Spring MVC注解支持，并且加入自定义的类型转换器 -->
     <mvc:annotation-driven conversion-service="conversionServiceFactoryBean"/>
+
+    <!-- 前端控制器，静态资源不拦截 -->
+    <mvc:resources mapping="/js/**" location="/js/"/>
 </beans>
