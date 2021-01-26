@@ -22,19 +22,29 @@
   </properties>
 
   <dependencies>
-    <!-- mvc -->
+    <!-- Sring MVC -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>${spring.version}</version>
     </dependency>
 
+    <!-- POST请求参数绑定需要依赖jackson -->
     <!-- jackson -->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
       <version>2.9.1</version>
     </dependency>
+
+    <!-- Spring MVC文件上传需要依赖fileupload -->
+    <!-- fileupload -->
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.4</version>
+    </dependency>
+
 
     <dependency>
       <groupId>junit</groupId>
