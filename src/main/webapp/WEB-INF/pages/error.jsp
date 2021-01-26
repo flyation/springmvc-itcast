@@ -11,9 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-    <h3>入门成功</h3>
-    ${user.uname} -- ${user.uage}
-
-    <%System.out.println("success.jsp执行了。。。");%>
+    <h1>这是一个以后可以叫美工去美化的异常处理页面:)</h1>
+    ${msg}
 </body>
 </html>
